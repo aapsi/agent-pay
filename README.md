@@ -1,39 +1,43 @@
-# 🤖 AgentPay — AI Agent Payment Orchestration Layer
+# AgentPay
 
-> Infrastructure enabling AI agents to autonomously execute blockchain transactions without human intervention.
+**AI Agent Payment Orchestration Layer**
 
-<div align="center">
+Infrastructure enabling AI agents to autonomously execute blockchain transactions without human intervention.
+
+---
 
 [![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 [![ERC-4337](https://img.shields.io/badge/ERC--4337-Account%20Abstraction-purple.svg)](https://eips.ethereum.org/EIPS/eip-4337)
 [![Multi-Chain](https://img.shields.io/badge/Multi--Chain-Supported-green.svg)](#supported-chains)
 
-</div>
-
 ---
 
-## 🎯 Overview
+## Overview
 
-AgentPay bridges the gap between AI decision-making and blockchain execution. While AI agents can reason about financial decisions, they traditionally cannot act on them. AgentPay changes this by providing a secure, scalable infrastructure layer that:
+AgentPay bridges the gap between AI decision-making and blockchain execution. While AI agents can reason about financial decisions, they traditionally cannot act on them. AgentPay provides a secure, scalable infrastructure layer that:
 
-- **Translates intents to actions** — Agents express *what* they want; the system figures out *how*
+- **Translates intents to actions** — Agents express *what* they want; the system determines *how*
 - **Abstracts complexity** — No need for agents to manage gas, keys, or protocol specifics
 - **Ensures security** — Programmable authorization with spending limits and allowlists
 - **Provides proof** — Execution verification and status tracking
 
-## ✨ Key Features
+---
+
+## Key Features
 
 | Feature | Description |
 |---------|-------------|
-| **Intent-Based Execution** | Declarative intents instead of raw transaction calldata |
-| **Account Abstraction (ERC-4337)** | Smart contract wallets with programmable authorization |
-| **Gas Abstraction** | Agents never need to hold native tokens — paymasters handle gas |
-| **Multi-Solver Routing** | Competitive quotes from DEX aggregators and cross-chain solvers |
-| **Multi-Chain Support** | Seamless execution across Ethereum, Arbitrum, Base, Optimism, and more |
-| **Security Policies** | Spending limits, token allowlists, destination restrictions |
-| **Execution Proofs** | On-chain verification and status tracking via webhooks |
+| Intent-Based Execution | Declarative intents instead of raw transaction calldata |
+| Account Abstraction (ERC-4337) | Smart contract wallets with programmable authorization |
+| Gas Abstraction | Agents never need to hold native tokens — paymasters handle gas |
+| Multi-Solver Routing | Competitive quotes from DEX aggregators and cross-chain solvers |
+| Multi-Chain Support | Seamless execution across Ethereum, Arbitrum, Base, Optimism, and more |
+| Security Policies | Spending limits, token allowlists, destination restrictions |
+| Execution Proofs | On-chain verification and status tracking via webhooks |
 
-## 🏗️ Architecture
+---
+
+## Architecture
 
 ```
 ┌─────────────────────────────────────────────────────────────────────────┐
@@ -74,7 +78,9 @@ AgentPay bridges the gap between AI decision-making and blockchain execution. Wh
          └──────────────────┘
 ```
 
-## 🚀 Quick Start
+---
+
+## Quick Start
 
 ### Prerequisites
 
@@ -136,13 +142,17 @@ JWT_SECRET=your_jwt_secret
 KMS_KEY_ID=your_kms_key_id
 ```
 
-## 📡 API Reference
+---
+
+## API Reference
 
 ### Create Intent
 
 ```http
 POST /v1/intents
 ```
+
+**Request:**
 
 ```json
 {
@@ -195,18 +205,22 @@ GET /v1/intents/{intentId}
 GET /v1/wallets/{address}/balances
 ```
 
-## 🔗 Supported Chains
+---
+
+## Supported Chains
 
 | Chain | Chain ID | Status |
 |-------|----------|--------|
-| Ethereum Mainnet | 1 | ✅ Supported |
-| Arbitrum One | 42161 | ✅ Supported |
-| Base | 8453 | ✅ Supported |
-| Optimism | 10 | ✅ Supported |
-| Polygon | 137 | 🔜 Coming Soon |
-| zkSync Era | 324 | 🔜 Coming Soon |
+| Ethereum Mainnet | 1 | Supported |
+| Arbitrum One | 42161 | Supported |
+| Base | 8453 | Supported |
+| Optimism | 10 | Supported |
+| Polygon | 137 | Planned |
+| zkSync Era | 324 | Planned |
 
-## 🔒 Security
+---
+
+## Security
 
 AgentPay implements defense-in-depth security:
 
@@ -217,7 +231,9 @@ AgentPay implements defense-in-depth security:
 - **Audit Logging**: Complete activity trails
 - **Calldata Validation**: Solver response verification
 
-## 📊 Monitoring
+---
+
+## Monitoring
 
 Built-in observability with:
 
@@ -226,7 +242,9 @@ Built-in observability with:
 - Distributed tracing support
 - Health check at `/health`
 
-## 🧪 Testing
+---
+
+## Testing
 
 ```bash
 # Run unit tests
@@ -239,7 +257,9 @@ make test-integration
 make test-e2e
 ```
 
-## 📚 Documentation
+---
+
+## Documentation
 
 - [Technical Specification](./docs/TECHNICAL_SPEC.md)
 - [API Documentation](./docs/API.md)
@@ -247,7 +267,9 @@ make test-e2e
 - [Deployment Guide](./docs/DEPLOYMENT.md)
 - [Troubleshooting](./docs/TROUBLESHOOTING.md)
 
-## 🗺️ Roadmap
+---
+
+## Roadmap
 
 - [x] Core intent engine
 - [x] ERC-4337 integration
@@ -257,15 +279,21 @@ make test-e2e
 - [ ] Batched execution
 - [ ] Scheduled intents
 
-## 🤝 Contributing
+---
 
-Contributions are welcome! Please read our [Contributing Guide](CONTRIBUTING.md) for details on our code of conduct and the process for submitting pull requests.
+## Contributing
 
-## 📄 License
+Contributions are welcome. Please read our [Contributing Guide](CONTRIBUTING.md) for details on our code of conduct and the process for submitting pull requests.
 
-This project is licensed under the MIT License — see the [LICENSE](LICENSE) file for details.
+---
 
-## 🙏 Acknowledgments
+## License
+
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
+
+---
+
+## Acknowledgments
 
 - [ERC-4337 Team](https://eips.ethereum.org/EIPS/eip-4337) — Account Abstraction standard
 - [Pimlico](https://pimlico.io) — Bundler infrastructure
@@ -274,10 +302,6 @@ This project is licensed under the MIT License — see the [LICENSE](LICENSE) fi
 
 ---
 
-<div align="center">
+**Built for the autonomous agent economy**
 
-**Built for the autonomous agent economy** 🚀
-
-[Documentation](./docs) · [Report Bug](https://github.com/your-org/agent-pay/issues) · [Request Feature](https://github.com/your-org/agent-pay/issues)
-
-</div>
+[Documentation](./docs) | [Report Bug](https://github.com/your-org/agent-pay/issues) | [Request Feature](https://github.com/your-org/agent-pay/issues)
